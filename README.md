@@ -1,3 +1,10 @@
+steps:
+git repository
+the DOM structure
+make the routing work in App.js
+- API Restful SKUs + id + 200/404
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
