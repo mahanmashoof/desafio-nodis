@@ -36,8 +36,8 @@ function LinkProducts(props) {
       <Link to={`/skus/${props.id - 1}`}>
         <img class="product-card-img" alt="" src={props.imageUrl} />
       </Link>
-      <p>{props.name}</p>
       <p class="price">R$ {props.salePrice}</p>
+      <p id="product-card-text">{props.name}</p>
     </div>
   );
 }
@@ -109,7 +109,11 @@ function Sku() {
       <Link to="/"> Home </Link>
       {products.map(product => (
         <div>
-          {product.id}, {product.name}, {product.description}, {product.price}
+          {product.id}, {product.name}, {product.ean}, {product.category},{" "}
+          {product.package.height}, {product.package.width},{" "}
+          {product.package.depth}, {product.package.weight},{" "}
+          {product.description}, {product.salePrice}, {product.promotionalPrice}
+          , {product.stock}
         </div>
       ))}
     </div>
