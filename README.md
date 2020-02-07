@@ -6,6 +6,10 @@
 -- DOM components, not very successful due to breaking links
 -- Logo + fonts
 -- product details on sku/:id
+-- product pics on home page
+-- product details on sku
+-- 404 page
+-- footer
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
