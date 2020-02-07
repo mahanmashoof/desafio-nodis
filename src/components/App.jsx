@@ -24,16 +24,20 @@ function PageSwitch() {
   return (
     <div>
       <Route exact path="/" children={<Home />} />
-      <Route exact path="/SKU" children={<Sku />} />
-      <Route path="/SKU/:id" children={<SkuIdView />} />
+      <Route exact path="/skus" children={<Sku />} />
+      <Route path="/skus/:id" children={<SkuIdView />} />
     </div>
   );
 }
 
 function LinkProducts(props) {
   return (
-    <div>
-      {props.key} <Link to={`/SKU/${props.id}`}> {props.name} </Link>
+    <div class="product-card">
+      <Link to={`/skus/${props.id - 1}`}>
+        <img class="product-card-img" alt="" src={props.imageUrl} />
+      </Link>
+      <p>{props.name}</p>
+      <p class="price">R$ {props.salePrice}</p>
     </div>
   );
 }
@@ -53,7 +57,8 @@ function Home() {
   return (
     <div>
       <Logo />
-      <h2> Products </h2> {products.map(LinkProducts)}
+      <h1 id="home-headline"> Products </h1>
+      {products.map(LinkProducts)}
     </div>
   );
 }
@@ -69,14 +74,29 @@ function SkuIdView() {
         Product not found
       </div>
     );
-
   return (
     <div>
       <Logo />
       <div class="product-page">
-        <h1> {product.name} </h1>
-        <img class="product-img" alt="" src={product.imgURL} />
-        <h2> R$ {product.price} </h2>
+        <h1> {product.name}</h1>
+        <table class="prod-table">
+          <tr>
+            <td>
+              <img class="product-img" alt="" src={product.imageUrl} />
+            </td>
+            <td class="other-info">
+              <h3> Category:</h3>
+              <p> {product.category} </p>
+              <br />
+              <h3> Package dimensions:</h3>
+              <p> Height: {product.package.height} cm </p>
+              <p> Width: {product.package.width} cm</p>
+              <p> Depth: {product.package.depth} cm</p>
+              <p> Weight: {product.package.weight} g</p>
+            </td>
+          </tr>
+        </table>
+        <h2 class="price"> R$ {product.salePrice} </h2>
         <p> {product.description} </p>
       </div>
     </div>
