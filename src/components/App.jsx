@@ -23,9 +23,9 @@ export default function NodisApp() {
 function PageSwitch() {
   return (
     <div>
-      <Route exact path="/" children={<Home />} />{" "}
-      <Route exact path="/SKU" children={<Sku />} />{" "}
-      <Route path="/SKU/:id" children={<SkuIdView />} />{" "}
+      <Route exact path="/" children={<Home />} />
+      <Route exact path="/SKU" children={<Sku />} />
+      <Route path="/SKU/:id" children={<SkuIdView />} />
     </div>
   );
 }
@@ -33,17 +33,19 @@ function PageSwitch() {
 function LinkProducts(props) {
   return (
     <div>
-      {" "}
-      {props.key} <Link to={`/SKU/${props.id}`}> {props.name} </Link>{" "}
+      {props.key} <Link to={`/SKU/${props.id}`}> {props.name} </Link>
     </div>
   );
 }
 
 function Logo() {
-  return(
-    <header>
-      <Link to="/"> <img src={logo} alt="logo" class="logo" /> </Link>
-    </header>
+  return (
+    <div class="header">
+      <Link to="/">
+        <img src={logo} alt="logo" class="logo" />
+      </Link>
+      <h1> Nodis </h1>
+    </div>
   );
 }
 
@@ -51,7 +53,7 @@ function Home() {
   return (
     <div>
       <Logo />
-      <h2> Products </h2> {products.map(LinkProducts)}{" "}
+      <h2> Products </h2> {products.map(LinkProducts)}
     </div>
   );
 }
@@ -64,16 +66,19 @@ function SkuIdView() {
     return (
       <div>
         <Link to="/"> Home </Link>
-        Product not found{" "}
+        Product not found
       </div>
     );
 
   return (
     <div>
       <Logo />
-      <h1> {product.name} </h1>{" "}
-      <img alt="" src={product.imgURL} /> <h2> R$ {product.price} </h2>{" "}
-      <p> {product.description} </p>{" "}
+      <div class="product-page">
+        <h1> {product.name} </h1>
+        <img class="product-img" alt="" src={product.imgURL} />
+        <h2> R$ {product.price} </h2>
+        <p> {product.description} </p>
+      </div>
     </div>
   );
 }
@@ -81,13 +86,12 @@ function SkuIdView() {
 function Sku() {
   return (
     <div>
-      <Link to="/"> Home </Link>{" "}
+      <Link to="/"> Home </Link>
       {products.map(product => (
         <div>
-          {" "}
-          {product.id}, {product.name}, {product.description}, {product.price}{" "}
+          {product.id}, {product.name}, {product.description}, {product.price}
         </div>
-      ))}{" "}
+      ))}
     </div>
   );
 }

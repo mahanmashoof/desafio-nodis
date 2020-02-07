@@ -5,6 +5,7 @@
 --- API Restful SKUs + id + 200/404
 -- DOM components, not very successful due to breaking links
 -- Logo + fonts
+-- product details on sku/:id
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
