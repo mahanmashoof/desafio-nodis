@@ -53,12 +53,21 @@ function Header() {
   );
 }
 
+function Footer() {
+  return(
+    <div class="header">
+      <p>Copyright © Nodis {(new Date().getFullYear())}</p>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div>
       <Header />
       <h1 class="main-headline"> Products </h1>
       <div class="home-icons">{products.map(LinkProducts)}</div>
+      <Footer />
     </div>
   );
 }
@@ -102,6 +111,7 @@ function SkuIdView() {
         <h2 class="price"> R$ {product.salePrice} </h2>
         <p> {product.description} </p>
       </div>
+      <Footer />
     </div>
   );
 }
