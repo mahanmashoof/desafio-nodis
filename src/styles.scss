@@ -1,0 +1,22 @@
+$headline-font: 'IBM Plex Sans', sans-serif;
+$text-font: 'Rubik', sans-serif;
+
+h1, h2, h3 {
+  font-family: $headline-font;
+}
+
+header {
+  background-color: #155932;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+p, plain-text {
+  font-family: $text-font;
+}
+
+.logo {
+  width: 5%;
+  height: 5%;
+}

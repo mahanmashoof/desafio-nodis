@@ -4,6 +4,7 @@
 -- make the routing work in App.js
 --- API Restful SKUs + id + 200/404
 -- DOM components, not very successful due to breaking links
+-- Logo + fonts
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
