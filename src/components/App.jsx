@@ -58,7 +58,7 @@ function Home() {
     <div>
       <Logo />
       <h1 id="home-headline"> Products </h1>
-      {products.map(LinkProducts)}
+      <div class="home-icons">{products.map(LinkProducts)}</div>
     </div>
   );
 }
@@ -93,6 +93,9 @@ function SkuIdView() {
               <p> Width: {product.package.width} cm</p>
               <p> Depth: {product.package.depth} cm</p>
               <p> Weight: {product.package.weight} g</p>
+              <br />
+              <h3> Left in stock:</h3>
+              <p class="price"> {product.stock} pcs</p>
             </td>
           </tr>
         </table>

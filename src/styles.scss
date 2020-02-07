@@ -27,6 +27,12 @@ p, plain-text {
   color: #fff;
 }
 
+.home-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .logo {
   float: left;
   width: 5%;
@@ -43,10 +49,9 @@ p, plain-text {
 }
 
 .product-card {
-  margin: 20px 3%;
-  width: 27%;
+  margin: 20px;
+  width: 400px;
   text-align: center;
-  float:left;
 }
 
 .product-card-img {
