@@ -1,13 +1,6 @@
 $headline-font: 'IBM Plex Sans', sans-serif;
 $text-font: 'Rubik', sans-serif;
 
-#home-headline{
-  text-align: center;
-  font-size: 3rem;
-  padding: 1% 0;
-  color: #155932;
-}
-
 #product-card-text {
   height: 4rem;
 }
@@ -36,6 +29,13 @@ p, plain-text {
 .logo {
   float: left;
   width: 5%;
+}
+
+.main-headline{
+  text-align: center;
+  font-size: 3rem;
+  padding: 1% 0;
+  color: #155932;
 }
 
 .other-info {

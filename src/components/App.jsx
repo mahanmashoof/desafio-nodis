@@ -42,7 +42,7 @@ function LinkProducts(props) {
   );
 }
 
-function Logo() {
+function Header() {
   return (
     <div class="header">
       <Link to="/">
@@ -56,8 +56,8 @@ function Logo() {
 function Home() {
   return (
     <div>
-      <Logo />
-      <h1 id="home-headline"> Products </h1>
+      <Header />
+      <h1 class="main-headline"> Products </h1>
       <div class="home-icons">{products.map(LinkProducts)}</div>
     </div>
   );
@@ -70,13 +70,13 @@ function SkuIdView() {
   if (!product)
     return (
       <div>
-        <Link to="/"> Home </Link>
-        Product not found
+        <Header />
+        <h1 class="main-headline">Product not found</h1>
       </div>
     );
   return (
     <div>
-      <Logo />
+      <Header />
       <div class="product-page">
         <h1> {product.name}</h1>
         <table class="prod-table">
