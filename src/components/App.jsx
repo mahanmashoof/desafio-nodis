@@ -1,11 +1,11 @@
-import React from "react";
+import React, {Component} from "react";
 import {
   BrowserRouter as Router,
   Route,
   Link,
   useParams
 } from "react-router-dom";
-import products from "../products";
+import items from "../products";
 import logo from "../logos/logo-white.png";
 
 function App() {
@@ -57,7 +57,24 @@ function Footer() {
   );
 }
 
-function Home() {
+class Home extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      products: []
+    }
+  }
+  componentDidMount() {
+    fetch("https://frontend-challenge-beginner.herokuapp.com/skus")
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        products: json
+      })
+    })
+  }
+  render(){
+var {products} = this.state;
   return (
     <div>
       <Header />
@@ -67,10 +84,11 @@ function Home() {
     </div>
   );
 }
+}
 
 function SkuIdView() {
   let { id } = useParams();
-  let product = products[parseInt(id, 10)];
+  let product = items[parseInt(id, 10)];
 
   if (!product)
     return (
@@ -112,7 +130,24 @@ function SkuIdView() {
   );
 }
 
-function Sku() {
+class Sku extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      products: []
+    }
+  }
+  componentDidMount() {
+    fetch("https://frontend-challenge-beginner.herokuapp.com/skus")
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        products: json
+      })
+    })
+  }
+  render(){
+var {products} = this.state;
   return (
     <div>
       <Link to="/"> Home </Link>
@@ -127,6 +162,7 @@ function Sku() {
       ))}
     </div>
   );
+}
 }
 
 export default App;
