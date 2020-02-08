@@ -5,11 +5,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-// import Home from "./Home"
-// import SkuIdView from "./SkuIdView"
-// import Sku from "./Sku"
 import products from "../products";
-// import PageSwitch from "./PageSwitch"
 import logo from "../logos/logo-white.png";
 
 function App() {
