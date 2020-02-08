@@ -12,7 +12,7 @@ import products from "../products";
 // import PageSwitch from "./PageSwitch"
 import logo from "../logos/logo-white.png";
 
-export default function NodisApp() {
+function App() {
   return (
     <Router>
       <PageSwitch />
@@ -36,7 +36,7 @@ function LinkProducts(props) {
       <Link to={`/skus/${props.id - 1}`}>
         <img class="product-card-img" alt="" src={props.imageUrl} />
       </Link>
-      <p class="price">R$ {props.salePrice}</p>
+      <p class="price">R$ {(props.salePrice / 100).toFixed(2)}</p>
       <p id="product-card-text">{props.name}</p>
     </div>
   );
@@ -108,7 +108,7 @@ function SkuIdView() {
             </td>
           </tr>
         </table>
-        <h2 class="price"> R$ {product.salePrice} </h2>
+        <h2 class="price"> R$ {(product.salePrice / 100).toFixed(2)} </h2>
         <p> {product.description} </p>
       </div>
       <Footer />
@@ -132,3 +132,5 @@ function Sku() {
     </div>
   );
 }
+
+export default App;
